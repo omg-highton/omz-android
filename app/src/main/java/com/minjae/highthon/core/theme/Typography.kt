@@ -26,33 +26,44 @@ val pretendard = FontFamily(
 
 object OmzTypography {
 
-    val body1 = TextStyle(
+    val headline1 = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.Bold,
         fontSize = 18.sp,
+        lineHeight = 20.sp,
     )
 
-    val body2 = TextStyle(
+    val headline2 = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.Medium,
         fontSize = 16.sp,
+        lineHeight = 18.sp,
     )
 
-    val body3 = TextStyle(
-        fontFamily = pretendard,
-        fontWeight = FontWeight.Normal,
-        fontSize = 14.sp,
-    )
-
-    val body4 = TextStyle(
+    val tag1 = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp,
+        lineHeight = 14.sp,
+    )
+
+    val tag2 = TextStyle(
+        fontFamily = pretendard,
+        fontWeight = FontWeight.Normal,
+        fontSize = 10.sp,
+        lineHeight = 12.sp,
+    )
+
+    val option = TextStyle(
+        fontFamily = pretendard,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        lineHeight = 18.sp,
     )
 }
 
 @Composable
-fun Body1(
+fun Headline1(
     text: String,
     modifier: Modifier = Modifier,
     color: Color = Color.Unspecified,
@@ -68,7 +79,7 @@ fun Body1(
         text = text,
         modifier = modifier,
         color = color,
-        style = OmzTypography.body1,
+        style = OmzTypography.headline1,
         textDecoration = textDecoration,
         textAlign = textAlign,
         lineHeight = lineHeight,
@@ -80,7 +91,7 @@ fun Body1(
 }
 
 @Composable
-fun Body2(
+fun Headline2(
     text: String,
     modifier: Modifier = Modifier,
     color: Color = Color.Unspecified,
@@ -96,7 +107,7 @@ fun Body2(
         text = text,
         modifier = modifier,
         color = color,
-        style = OmzTypography.body2,
+        style = OmzTypography.headline2,
         textDecoration = textDecoration,
         textAlign = textAlign,
         lineHeight = lineHeight,
@@ -108,7 +119,7 @@ fun Body2(
 }
 
 @Composable
-fun Body3(
+fun Tag1(
     text: String,
     modifier: Modifier = Modifier,
     color: Color = Color.Unspecified,
@@ -124,7 +135,7 @@ fun Body3(
         text = text,
         modifier = modifier,
         color = color,
-        style = OmzTypography.body3,
+        style = OmzTypography.tag1,
         textDecoration = textDecoration,
         textAlign = textAlign,
         lineHeight = lineHeight,
@@ -136,7 +147,7 @@ fun Body3(
 }
 
 @Composable
-fun Body4(
+fun Tag2(
     text: String,
     modifier: Modifier = Modifier,
     color: Color = Color.Unspecified,
@@ -152,7 +163,35 @@ fun Body4(
         text = text,
         modifier = modifier,
         color = color,
-        style = OmzTypography.body4,
+        style = OmzTypography.tag2,
+        textDecoration = textDecoration,
+        textAlign = textAlign,
+        lineHeight = lineHeight,
+        overflow = overflow,
+        softWrap = softWrap,
+        maxLines = maxLines,
+        onTextLayout = onTextLayout,
+    )
+}
+
+@Composable
+fun Option(
+    text: String,
+    modifier: Modifier = Modifier,
+    color: Color = Color.Unspecified,
+    textDecoration: TextDecoration? = null,
+    textAlign: TextAlign? = null,
+    lineHeight: TextUnit = TextUnit.Unspecified,
+    overflow: TextOverflow = TextOverflow.Clip,
+    softWrap: Boolean = true,
+    maxLines: Int = Int.MAX_VALUE,
+    onTextLayout: (TextLayoutResult) -> Unit = {},
+) {
+    Text(
+        text = text,
+        modifier = modifier,
+        color = color,
+        style = OmzTypography.option,
         textDecoration = textDecoration,
         textAlign = textAlign,
         lineHeight = lineHeight,
@@ -180,7 +219,7 @@ fun Error(
         text = text,
         modifier = modifier,
         color = color,
-        style = OmzTypography.body3,
+        style = OmzTypography.tag1,
         textDecoration = textDecoration,
         textAlign = textAlign,
         lineHeight = lineHeight,

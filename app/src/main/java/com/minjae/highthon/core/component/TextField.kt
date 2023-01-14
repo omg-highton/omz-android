@@ -34,10 +34,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.minjae.highthon.core.icon.OmzIcon
-import com.minjae.highthon.core.theme.Body3
 import com.minjae.highthon.core.theme.Error
 import com.minjae.highthon.core.theme.OmzColor
 import com.minjae.highthon.core.theme.OmzTypography
+import com.minjae.highthon.core.theme.Option
 
 @Composable
 fun OmzTextField(
@@ -104,10 +104,10 @@ fun OmzTextField(
                     ),
                     visualTransformation = if (!passwordVisible && isPassword) PasswordVisualTransformation() else VisualTransformation.None,
                     maxLines = 1,
-                    textStyle = OmzTypography.body3,
+                    textStyle = OmzTypography.tag1,
                     decorationBox = { innerTextField ->
                         if (value.isEmpty() && hint != null) {
-                            Body3(text = hint, color = OmzColor.Gray200)
+                            Option(text = hint, color = OmzColor.Gray60)
                         }
 
                         innerTextField()
@@ -137,10 +137,10 @@ fun OmzTextField(
         }
 
         if (description != null) {
-            Body3(
+            Option(
                 text = description,
                 modifier = Modifier.padding(start = 3.dp, top = 6.dp),
-                color = OmzColor.Gray200
+                color = OmzColor.Gray20
             )
         }
     }

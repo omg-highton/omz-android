@@ -14,7 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.minjae.highthon.core.icon.OmzIcon
-import com.minjae.highthon.core.theme.Body1
+import com.minjae.highthon.core.theme.Headline1
 import com.minjae.highthon.core.theme.OmzColor
 
 @Composable
@@ -80,29 +80,29 @@ fun OutlineButton(
         shape = RoundedCornerShape(round),
         enabled = enabled
     ) {
-        Body1(text = text, color = textColor)
+        Headline1(text = text, color = textColor)
     }
 }
 
-@Composable
-fun PlusButton(
-    modifier: Modifier = Modifier,
-    painter: Painter = painterResource(id = OmzIcon.Plus),
-    contentDescription: String?,
-    enabled: Boolean = true,
-    onClick: () -> Unit
-) {
-    BasicIconButton(
-        modifier = modifier,
-        painter = painter,
-        contentDescription = contentDescription,
-        onClick = onClick,
-        backgroundColor = OmzColor.MainColor,
-        pressedBackgroundColor = OmzColor.PressedColor,
-        disabledBackgroundColor = OmzColor.SubColor,
-        enabled = enabled
-    )
-}
+//@Composable
+//fun PlusButton(
+//    modifier: Modifier = Modifier,
+//    painter: Painter = painterResource(id = OmzIcon.Plus),
+//    contentDescription: String?,
+//    enabled: Boolean = true,
+//    onClick: () -> Unit
+//) {
+//    BasicIconButton(
+//        modifier = modifier,
+//        painter = painter,
+//        contentDescription = contentDescription,
+//        onClick = onClick,
+//        backgroundColor = OmzColor.MainColor,
+//        pressedBackgroundColor = OmzColor.PressedColor,
+//        disabledBackgroundColor = OmzColor.SubColor,
+//        enabled = enabled
+//    )
+//}
 
 @Preview
 @Composable
