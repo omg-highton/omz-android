@@ -1,8 +1,10 @@
 package com.minjae.highthon.data.local.entity
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity
 data class OmzEntity(
-    val data: String
+    @PrimaryKey
+    val data: Int
 )
