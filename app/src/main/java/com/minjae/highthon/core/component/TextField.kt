@@ -42,10 +42,10 @@ import com.minjae.highthon.core.theme.Option
 @Composable
 fun OmzTextField(
     modifier: Modifier = Modifier,
-    backgroundColor: Color = Color.Transparent,
+    backgroundColor: Color = Color.White,
     value: String,
     enabledSideBtn: Boolean = false,
-    round: Dp = 5.dp,
+    round: Dp = 8.dp,
     onValueChange: (String) -> Unit,
     error: String? = null,
     isPassword: Boolean = false,
@@ -57,8 +57,6 @@ fun OmzTextField(
 ) {
     val interactionSource = remember { MutableInteractionSource() }
 
-    val borderColor: Color = if (error == null) OmzColor.Gray100 else OmzColor.Error
-
     var passwordVisible by remember {
         mutableStateOf(false)
     }
@@ -68,16 +66,11 @@ fun OmzTextField(
     Column {
         Box(
             modifier = modifier
-                .height(44.dp)
+                .height(48.dp)
                 .wrapContentHeight(Alignment.CenterVertically)
                 .background(
                     color = backgroundColor,
                     shape = RoundedCornerShape(round),
-                )
-                .border(
-                    width = 1.dp,
-                    color = borderColor,
-                    shape = RoundedCornerShape(round)
                 )
                 .clickable(
                     interactionSource = interactionSource,
@@ -109,7 +102,6 @@ fun OmzTextField(
                         if (value.isEmpty() && hint != null) {
                             Option(text = hint, color = OmzColor.Gray60)
                         }
-
                         innerTextField()
                     },
                 )
