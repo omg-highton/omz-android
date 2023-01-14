@@ -18,10 +18,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.minjae.highthon.R
 import com.minjae.highthon.core.icon.OmzIcon
 import com.minjae.highthon.core.theme.Headline1
-import com.minjae.highthon.core.theme.Body3
 import com.minjae.highthon.core.theme.OmzColor
+import com.minjae.highthon.core.theme.Option
 
 @Composable
 fun Header(
@@ -43,15 +44,15 @@ fun Header(
             modifier = modifier
                 .fillMaxWidth()
                 .height(38.dp),
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
         ) {
             if (enabledBackBtn) {
                 IconButton(onClick = onPrevious ?: {}, modifier = Modifier.size(21.dp)) {
-                Icon(
-                    painter = painterResource(id = OmzIcon.Back),
-                    contentDescription = null
-                )
-            }
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_back_small),
+                        contentDescription = null
+                    )
+                }
             }
 
             Spacer(modifier = Modifier.width(12.dp))
@@ -60,41 +61,41 @@ fun Header(
 
             Spacer(modifier = Modifier.weight(1f))
 
-            if (enabledNoticeBtn) {
-                Spacer(modifier = Modifier.width(8.dp))
-
-                IconButton(onClick = onNotice ?: {}, modifier = Modifier.size(24.dp)) {
-                Image(
-                    painter = painterResource(id = OmzIcon.Notice),
-                    contentDescription = null
-                )
-            }
-            }
-
-            if (enabledChatBtn) {
-                Spacer(modifier = Modifier.width(8.dp))
-
-                IconButton(onClick = onMessage ?: {}, modifier = Modifier.size(24.dp)) {
-                Image(
-                    painter = painterResource(id = OmzIcon.Message),
-                    contentDescription = null
-                )
-            }
-            }
-
-            if (enabledEditBtn) {
-                Spacer(modifier = Modifier.width(8.dp))
-
-                IconButton(onClick = onEdit ?: {}, modifier = Modifier.size(24.dp)) {
-                Image(
-                    painter = painterResource(id = OmzIcon.Edit),
-                    contentDescription = null
-                )
-            }
-            }
+//            if (enabledNoticeBtn) {
+//                Spacer(modifier = Modifier.width(8.dp))
+//
+//                IconButton(onClick = onNotice ?: {}, modifier = Modifier.size(24.dp)) {
+//                    Image(
+//                        painter = painterResource(id = OmzIcon.Notice),
+//                        contentDescription = null
+//                    )
+//                }
+//            }
+//
+//            if (enabledChatBtn) {
+//                Spacer(modifier = Modifier.width(8.dp))
+//
+//                IconButton(onClick = onMessage ?: {}, modifier = Modifier.size(24.dp)) {
+//                    Image(
+//                        painter = painterResource(id = OmzIcon.Message),
+//                        contentDescription = null
+//                    )
+//                }
+//            }
+//
+//            if (enabledEditBtn) {
+//                Spacer(modifier = Modifier.width(8.dp))
+//
+//                IconButton(onClick = onEdit ?: {}, modifier = Modifier.size(24.dp)) {
+//                    Image(
+//                        painter = painterResource(id = OmzIcon.Edit),
+//                        contentDescription = null
+//                    )
+//                }
+//            }
 
             if (textBtn != null) {
-                Body3(
+                Option(
                     text = textBtn,
                     color = OmzColor.MainColor,
                     modifier = Modifier.clickable {

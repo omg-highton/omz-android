@@ -84,25 +84,25 @@ fun OutlineButton(
     }
 }
 
-@Composable
-fun PlusButton(
-    modifier: Modifier = Modifier,
-    painter: Painter = painterResource(id = OmzIcon.Plus),
-    contentDescription: String?,
-    enabled: Boolean = true,
-    onClick: () -> Unit
-) {
-    BasicIconButton(
-        modifier = modifier,
-        painter = painter,
-        contentDescription = contentDescription,
-        onClick = onClick,
-        backgroundColor = OmzColor.MainColor,
-        pressedBackgroundColor = OmzColor.PressedColor,
-        disabledBackgroundColor = OmzColor.SubColor,
-        enabled = enabled
-    )
-}
+//@Composable
+//fun PlusButton(
+//    modifier: Modifier = Modifier,
+//    painter: Painter = painterResource(id = OmzIcon.Plus),
+//    contentDescription: String?,
+//    enabled: Boolean = true,
+//    onClick: () -> Unit
+//) {
+//    BasicIconButton(
+//        modifier = modifier,
+//        painter = painter,
+//        contentDescription = contentDescription,
+//        onClick = onClick,
+//        backgroundColor = OmzColor.MainColor,
+//        pressedBackgroundColor = OmzColor.PressedColor,
+//        disabledBackgroundColor = OmzColor.SubColor,
+//        enabled = enabled
+//    )
+//}
 
 @Preview
 @Composable
