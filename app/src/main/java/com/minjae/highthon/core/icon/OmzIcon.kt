@@ -7,22 +7,17 @@ object OmzIcon {
     fun Password(visible: Boolean) =
         if (visible) R.drawable.ic_password_visible else R.drawable.ic_password_invisible
 
-    fun Good(state: Boolean) =
-        if (state) R.drawable.ic_good_on else R.drawable.ic_good_off
+    const val Comment = R.drawable.ic_comment
 
-    val Cancel = R.drawable.ic_cancel
+    const val GrayArticle = R.drawable.ic_gray_article
 
-    val File = R.drawable.ic_file_off
+    const val GrayHome = R.drawable.ic_gray_home
 
-    val Message = R.drawable.ic_message
+    const val OrangeArticle = R.drawable.ic_orange_article
 
-    val Back = R.drawable.ic_back_small
+    const val OrangeHome = R.drawable.ic_orange_home
 
-    val Plus = R.drawable.ic_plus
+    const val Pen = R.drawable.ic_pen
 
-    val Edit = R.drawable.ic_edit
-
-    val Notice = R.drawable.ic_notice
-
-    val Profile = R.drawable.ic_profile
+    const val See = R.drawable.ic_see
 }
