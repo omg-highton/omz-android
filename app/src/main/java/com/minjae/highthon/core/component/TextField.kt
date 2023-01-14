@@ -107,7 +107,7 @@ fun OmzTextField(
                     textStyle = OmzTypography.body3,
                     decorationBox = { innerTextField ->
                         if (value.isEmpty() && hint != null) {
-                            Body3(text = hint, color = OmzColor.Gray200)
+                            Body3(text = hint, color = OmzColor.Gray20)
                         }
 
                         innerTextField()
@@ -140,7 +140,7 @@ fun OmzTextField(
             Body3(
                 text = description,
                 modifier = Modifier.padding(start = 3.dp, top = 6.dp),
-                color = OmzColor.Gray200
+                color = OmzColor.Gray20
             )
         }
     }
