@@ -97,4 +97,6 @@ dependencies {
     testImplementation(Dependencies.UnitTest.MOCKITO)
     testImplementation(Dependencies.UnitTest.MOCKITO_KOTLIN)
     testImplementation(Dependencies.UnitTest.MOCKITO_INLINE)
+
+    implementation("team.duckie.quack:quack-ui-components:1.4.5")
 }
