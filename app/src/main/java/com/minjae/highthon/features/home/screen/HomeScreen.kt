@@ -19,14 +19,19 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.NavGraph
 import com.minjae.highthon.R
 import com.minjae.highthon.core.component.Banner
 import com.minjae.highthon.core.modifier.omzClickable
@@ -36,6 +41,7 @@ import com.minjae.highthon.core.theme.OmzColor
 import com.minjae.highthon.core.theme.Option
 import com.minjae.highthon.core.theme.Tag1
 import com.minjae.highthon.core.theme.Tag2
+import com.minjae.highthon.root.NavGroup
 
 private val feed: List<FeedItem> = (1..10).map {
     FeedItem(
@@ -55,44 +61,89 @@ private val feed: List<FeedItem> = (1..10).map {
 @Composable
 fun HomeScreen(
 //    homeVM: HomeVM,
-//    navController: NavController
+    navController: NavController
 ) {
-    LazyColumn(
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .background(OmzColor.BackgroundColor)
+            .verticalScroll(rememberScrollState())
     ) {
-        item {
-            Column(
-                modifier = Modifier.fillMaxSize()
-            ) {
-                TopLogo()
-                Banner(image = painterResource(id = R.drawable.dummy_img))
-                Box(
-                    modifier = Modifier
-                        .height(44.dp)
-                        .fillMaxWidth()
-                        .padding(horizontal = 20.dp)
-                ) {
-                    Headline1(
-                        text = "인기 게시물",
-                        modifier = Modifier.align(Alignment.CenterStart)
-                    )
-                }
-                Divider(color = OmzColor.DIVIDER)
-            }
+        TopLogo()
+
+        Banner(image = painterResource(id = R.drawable.dummy_img))
+
+        Image(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 16.dp),
+            painter = painterResource(id = R.drawable.fake_home),
+            contentDescription = null,
+            contentScale = ContentScale.FillWidth,
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(4.dp)
+                .background(OmzColor.DIVIDER)
+        )
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(44.dp)
+                .padding(
+                    horizontal = 20.dp,
+                    vertical = 12.dp,
+                ),
+        ) {
+            Headline1(text = "최신 게시글")
         }
 
-        items(feed) { item ->
-            Divider(color = OmzColor.DIVIDER)
-            HomeFeedDetailLayout(
-                feed = item,
-                onClicked = {},
-                onGoodClicked = {},
-                onWriteClicked = {},
-                detail = "detaildasda"
+        Divider()
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(44.dp)
+                .padding(
+                    horizontal = 20.dp,
+                    vertical = 12.dp,
+                ),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.ic_btn_all),
+                contentDescription = null,
+                modifier = Modifier.size(60.dp, 30.dp),
+                contentScale = ContentScale.FillWidth,
             )
+
+            Spacer(modifier = Modifier.width(16.dp))
+
+            Headline2(text = "Z세대", color = OmzColor.Gray80)
+
+            Spacer(modifier = Modifier.width(16.dp))
+
+            Headline2(text = "M세대", color = OmzColor.Gray80)
         }
+
+        Divider()
+
+        Image(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
+                .clickable {
+                    navController.navigate(NavGroup.Home.HOME_DETAIL)
+                },
+            painter = painterResource(id = R.drawable.ic_detail_a),
+            contentDescription = null,
+            contentScale = ContentScale.FillWidth,
+        )
     }
 }
 
@@ -114,8 +165,8 @@ enum class Rank {
 }
 
 data class Writer(
-    val name: String,
-    val type: MZType,
+    val name: String = "민재",
+    val type: MZType = MZType.M,
     val rank: Rank,
 )
 
@@ -341,5 +392,5 @@ fun TopLogoPreview() {
 @Preview
 @Composable
 fun HomePreview() {
-    HomeScreen()
+//    HomeScreen()
 }
