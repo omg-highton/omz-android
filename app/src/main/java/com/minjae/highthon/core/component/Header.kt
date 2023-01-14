@@ -19,7 +19,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.minjae.highthon.core.icon.OmzIcon
-import com.minjae.highthon.core.theme.Body1
+import com.minjae.highthon.core.theme.Headline1
 import com.minjae.highthon.core.theme.Body3
 import com.minjae.highthon.core.theme.OmzColor
 
@@ -56,7 +56,7 @@ fun Header(
 
             Spacer(modifier = Modifier.width(12.dp))
 
-            Body1(text = headerText)
+            Headline1(text = headerText)
 
             Spacer(modifier = Modifier.weight(1f))
 

@@ -104,7 +104,7 @@ fun OmzTextField(
                     ),
                     visualTransformation = if (!passwordVisible && isPassword) PasswordVisualTransformation() else VisualTransformation.None,
                     maxLines = 1,
-                    textStyle = OmzTypography.body3,
+                    textStyle = OmzTypography.tag1,
                     decorationBox = { innerTextField ->
                         if (value.isEmpty() && hint != null) {
                             Body3(text = hint, color = OmzColor.Gray200)
