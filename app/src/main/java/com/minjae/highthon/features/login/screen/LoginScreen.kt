@@ -21,7 +21,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.minjae.highthon.R
 import com.minjae.highthon.core.component.BasicButton
@@ -29,11 +28,10 @@ import com.minjae.highthon.core.component.OmzTextField
 import com.minjae.highthon.core.theme.Headline1
 import com.minjae.highthon.core.theme.Headline2
 import com.minjae.highthon.core.theme.OmzColor
-import com.minjae.highthon.core.theme.Tag1
 import com.minjae.highthon.core.theme.Tag2
 
 @Composable
-fun LoginScreen(navController: NavController) {
+fun LoginScreen(action: () -> Unit) {
 
     Column(
         modifier = Modifier
@@ -74,9 +72,7 @@ fun LoginScreen(navController: NavController) {
         BasicButton(
             onClick = {
                 if (id.isNotBlank() && pw.isNotBlank()) {
-
-                } else {
-
+                    action()
                 }
             },
             shape = RoundedCornerShape(8.dp),
@@ -100,10 +96,4 @@ fun LoginScreen(navController: NavController) {
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
     }
-}
-
-@Preview
-@Composable
-fun LoginScreenPreview() {
-    LoginScreen(rememberNavController())
 }
