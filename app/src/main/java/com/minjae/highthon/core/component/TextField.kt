@@ -1,10 +1,5 @@
 package com.minjae.highthon.core.component
 
-import com.minjae.highthon.core.icon.OmzIcon
-import com.minjae.highthon.core.theme.Body3
-import com.minjae.highthon.core.theme.Error
-import com.minjae.highthon.core.theme.OmzColor
-import com.minjae.highthon.core.theme.OmzTypography
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -38,6 +33,11 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.minjae.highthon.core.icon.OmzIcon
+import com.minjae.highthon.core.theme.Body3
+import com.minjae.highthon.core.theme.Error
+import com.minjae.highthon.core.theme.OmzColor
+import com.minjae.highthon.core.theme.OmzTypography
 
 @Composable
 fun OmzTextField(

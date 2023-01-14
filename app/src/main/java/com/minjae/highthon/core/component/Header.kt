@@ -1,6 +1,5 @@
 package com.minjae.highthon.core.component
 
-import com.minjae.highthon.core.theme.OmzColor
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -22,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.minjae.highthon.core.icon.OmzIcon
 import com.minjae.highthon.core.theme.Body1
 import com.minjae.highthon.core.theme.Body3
+import com.minjae.highthon.core.theme.OmzColor
 
 @Composable
 fun Header(
@@ -47,11 +47,11 @@ fun Header(
         ) {
             if (enabledBackBtn) {
                 IconButton(onClick = onPrevious ?: {}, modifier = Modifier.size(21.dp)) {
-                    Icon(
-                        painter = painterResource(id = OmzIcon.Back),
-                        contentDescription = null
-                    )
-                }
+                Icon(
+                    painter = painterResource(id = OmzIcon.Back),
+                    contentDescription = null
+                )
+            }
             }
 
             Spacer(modifier = Modifier.width(12.dp))
@@ -64,33 +64,33 @@ fun Header(
                 Spacer(modifier = Modifier.width(8.dp))
 
                 IconButton(onClick = onNotice ?: {}, modifier = Modifier.size(24.dp)) {
-                    Image(
-                        painter = painterResource(id = OmzIcon.Notice),
-                        contentDescription = null
-                    )
-                }
+                Image(
+                    painter = painterResource(id = OmzIcon.Notice),
+                    contentDescription = null
+                )
+            }
             }
 
             if (enabledChatBtn) {
                 Spacer(modifier = Modifier.width(8.dp))
 
                 IconButton(onClick = onMessage ?: {}, modifier = Modifier.size(24.dp)) {
-                    Image(
-                        painter = painterResource(id = OmzIcon.Message),
-                        contentDescription = null
-                    )
-                }
+                Image(
+                    painter = painterResource(id = OmzIcon.Message),
+                    contentDescription = null
+                )
+            }
             }
 
             if (enabledEditBtn) {
                 Spacer(modifier = Modifier.width(8.dp))
 
                 IconButton(onClick = onEdit ?: {}, modifier = Modifier.size(24.dp)) {
-                    Image(
-                        painter = painterResource(id = OmzIcon.Edit),
-                        contentDescription = null
-                    )
-                }
+                Image(
+                    painter = painterResource(id = OmzIcon.Edit),
+                    contentDescription = null
+                )
+            }
             }
 
             if (textBtn != null) {
