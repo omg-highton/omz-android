@@ -22,7 +22,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.minjae.highthon.core.theme.Body1
+import com.minjae.highthon.core.theme.Headline1
 
 @Composable
 fun BasicOutLineButton(
@@ -99,7 +99,7 @@ fun BasicBigButton(
         pressedBackgroundColor = pressedBackgroundColor,
         disabledBackgroundColor = disabledBackgroundColor,
     ) {
-        Body1(text = text, color = textColor)
+        Headline1(text = text, color = textColor)
     }
 }
 
@@ -130,7 +130,7 @@ fun BasicSmallButton(
         pressedBackgroundColor = pressedBackgroundColor,
         disabledBackgroundColor = disabledBackgroundColor,
     ) {
-        Body1(text = text, color = textColor)
+        Headline1(text = text, color = textColor)
     }
 }
 

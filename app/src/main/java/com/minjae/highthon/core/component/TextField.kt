@@ -34,18 +34,18 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.minjae.highthon.core.icon.OmzIcon
-import com.minjae.highthon.core.theme.Body3
 import com.minjae.highthon.core.theme.Error
 import com.minjae.highthon.core.theme.OmzColor
 import com.minjae.highthon.core.theme.OmzTypography
+import com.minjae.highthon.core.theme.Option
 
 @Composable
 fun OmzTextField(
     modifier: Modifier = Modifier,
-    backgroundColor: Color = Color.Transparent,
+    backgroundColor: Color = Color.White,
     value: String,
     enabledSideBtn: Boolean = false,
-    round: Dp = 5.dp,
+    round: Dp = 8.dp,
     onValueChange: (String) -> Unit,
     error: String? = null,
     isPassword: Boolean = false,
@@ -57,8 +57,6 @@ fun OmzTextField(
 ) {
     val interactionSource = remember { MutableInteractionSource() }
 
-    val borderColor: Color = if (error == null) OmzColor.Gray100 else OmzColor.Error
-
     var passwordVisible by remember {
         mutableStateOf(false)
     }
@@ -68,16 +66,11 @@ fun OmzTextField(
     Column {
         Box(
             modifier = modifier
-                .height(44.dp)
+                .height(48.dp)
                 .wrapContentHeight(Alignment.CenterVertically)
                 .background(
                     color = backgroundColor,
                     shape = RoundedCornerShape(round),
-                )
-                .border(
-                    width = 1.dp,
-                    color = borderColor,
-                    shape = RoundedCornerShape(round)
                 )
                 .clickable(
                     interactionSource = interactionSource,
@@ -104,12 +97,11 @@ fun OmzTextField(
                     ),
                     visualTransformation = if (!passwordVisible && isPassword) PasswordVisualTransformation() else VisualTransformation.None,
                     maxLines = 1,
-                    textStyle = OmzTypography.body3,
+                    textStyle = OmzTypography.tag1,
                     decorationBox = { innerTextField ->
                         if (value.isEmpty() && hint != null) {
-                            Body3(text = hint, color = OmzColor.Gray200)
+                            Option(text = hint, color = OmzColor.Gray60)
                         }
-
                         innerTextField()
                     },
                 )
@@ -137,10 +129,10 @@ fun OmzTextField(
         }
 
         if (description != null) {
-            Body3(
+            Option(
                 text = description,
                 modifier = Modifier.padding(start = 3.dp, top = 6.dp),
-                color = OmzColor.Gray200
+                color = OmzColor.Gray20
             )
         }
     }

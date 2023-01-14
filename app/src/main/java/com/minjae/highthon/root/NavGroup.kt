@@ -6,7 +6,9 @@ sealed class NavGroup(val group: String) {
 //        const val AUTH_HOME = "authHome"
     }
 
-    object Boarding : NavGroup("boarding") {
-//        const val ACADEMIC_HOME = "academicHome"
+    object Home : NavGroup("home") {
+        const val HOME = "HOME"
+        const val HOME_DETAIL = "HOME_DETAIL"
+        const val WRITE = "WRITE"
     }
 }
