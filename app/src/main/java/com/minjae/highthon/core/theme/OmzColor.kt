@@ -7,10 +7,19 @@ object OmzColor {
     val BackgroundColor = Color(0xFFFBFBFB)
 
     val White = Color(0xFFFFFFFF)
-    val Gray100 = Color(0xFFEEEEEE)
-    val Gray200 = Color(0xFFBDBDBD)
-    val Gray300 = Color(0xFF878787)
+    val Gray100 = Color(0xFF222222)
+    val Gray80 = Color(0xFF606060)
+    val Gray60 = Color(0xFF9A9A9A)
+    val Gray40 = Color(0xFFCDCDCD)
+    val Gray20 = Color(0xFFEDEDED)
+    val Gray0 = Color(0xFFFFFFFF)
     val Black = Color(0xFF000000)
+
+    val LightYellow = Color(0xFFFECE00)
+    val DarkYellow = Color(0xFFFFB700)
+
+    val LightOrange = Color(0xFFFF6801)
+    val DarkOrange = Color(0xFFEE5600)
 
     val SubColor = Color(0xFFD2A2F9)
     val MainColor = Color(0xFFA646F2)
