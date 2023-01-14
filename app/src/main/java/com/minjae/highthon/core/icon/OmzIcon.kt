@@ -20,4 +20,6 @@ object OmzIcon {
     const val Pen = R.drawable.ic_pen
 
     const val See = R.drawable.ic_see
+
+    const val Back = R.drawable.ic_back
 }
