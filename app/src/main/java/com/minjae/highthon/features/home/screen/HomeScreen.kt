@@ -3,6 +3,7 @@ package com.minjae.highthon.features.home.screen
 import android.nfc.Tag
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,9 +16,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -41,7 +42,7 @@ private val feed: List<FeedItem> = (1..10).map {
         number = 1,
         title = "게시글 $1",
         writer = Writer(
-            name ="user",
+            name = "user",
             type = MZType.M,
             rank = Rank.Bronze,
         ),
@@ -84,9 +85,12 @@ fun HomeScreen(
 
         items(feed) { item ->
             Divider(color = OmzColor.DIVIDER)
-            HomeFeedLayout(
+            HomeFeedDetailLayout(
                 feed = item,
                 onClicked = {},
+                onGoodClicked = {},
+                onWriteClicked = {},
+                detail = "detaildasda"
             )
         }
     }
@@ -108,6 +112,7 @@ enum class Rank {
     Diamond,
     Master,
 }
+
 data class Writer(
     val name: String,
     val type: MZType,
@@ -122,6 +127,7 @@ data class FeedItem(
     val seeNum: Int,
     val goodNum: Int,
 )
+
 @Composable
 private fun HomeFeedLayout(
     feed: FeedItem,
@@ -188,12 +194,111 @@ private fun HomeFeedLayout(
 }
 
 @Composable
+fun HomeFeedDetailLayout(
+    feed: FeedItem,
+    detail: String,
+    onClicked: (Int) -> Unit,
+    onGoodClicked: () -> Unit,
+    onWriteClicked: () -> Unit,
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(
+                horizontal = 20.dp,
+            )
+            .padding(
+                top = 16.dp
+            ),
+    ) {
+        Headline2(text = feed.title)
+
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Row {
+            Tag1(text = feed.writer.name + " · ")
+
+            Tag1(
+                text = feed.writer.type.text,
+                color = OmzColor.DarkOrange,
+            )
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Tag1(
+            text = detail,
+            color = OmzColor.Gray60,
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(5.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            HomeIconText(
+                painter = painterResource(id = R.drawable.ic_comment),
+                text = feed.commentNum.toString(),
+            )
+            HomeIconText(
+                painter = painterResource(id = R.drawable.ic_see),
+                text = feed.seeNum.toString(),
+            )
+            HomeIconText(
+                painter = painterResource(id = R.drawable.ic_good),
+                text = feed.goodNum.toString(),
+            )
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Divider()
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(38.dp),
+        ) {
+            HomeIconText(
+                modifier = Modifier
+                    .fillMaxWidth(0.5f)
+                    .fillMaxHeight(),
+                painter = painterResource(id = R.drawable.ic_heart),
+                text = "좋아요",
+                onClicked = {},
+            )
+            Box(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .width(1.dp)
+                    .padding(vertical = 12.dp)
+                    .background(color = OmzColor.DIVIDER),
+            )
+            HomeIconText(
+                modifier = Modifier.fillMaxSize(),
+                painter = painterResource(id = R.drawable.ic_comment),
+                text = "댓글 적기",
+                onClicked = {},
+            )
+        }
+    }
+}
+
+@Composable
 fun HomeIconText(
+    modifier: Modifier = Modifier,
+    onClicked: () -> Unit = {},
     painter: Painter,
     text: String,
 ) {
     Row(
+        modifier = modifier
+            .omzClickable {
+                onClicked()
+            },
         verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center,
     ) {
         Image(
             modifier = Modifier
@@ -210,10 +315,12 @@ fun HomeIconText(
         )
     }
 }
+
 @Composable
 private fun TopLogo() {
-    Box(modifier = Modifier
-        .background(color = OmzColor.MainColor)
+    Box(
+        modifier = Modifier
+            .background(color = OmzColor.MainColor)
     ) {
         Image(
             painter = painterResource(id = R.drawable.omz_header),
