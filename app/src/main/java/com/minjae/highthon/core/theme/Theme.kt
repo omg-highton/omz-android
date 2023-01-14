@@ -1,4 +1,4 @@
-package com.minjae.highthon.ui.theme
+package com.minjae.highthon.core.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

@@ -1,4 +1,4 @@
-package com.minjae.highthon.ui.theme
+package com.minjae.highthon.core.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
