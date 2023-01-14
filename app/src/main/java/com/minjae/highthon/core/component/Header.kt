@@ -20,6 +20,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.minjae.highthon.core.icon.OmzIcon
+import com.minjae.highthon.core.theme.Body1
+import com.minjae.highthon.core.theme.Body3
 
 @Composable
 fun Header(

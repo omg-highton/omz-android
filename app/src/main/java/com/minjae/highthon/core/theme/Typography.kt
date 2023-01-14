@@ -16,36 +16,36 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import com.minjae.highthon.R
 
-val spoqa_han_sans_neo = FontFamily(
-    Font(R.font.spoqa_han_sans_neo_bold, FontWeight.Bold),
-    Font(R.font.spoqa_han_sans_neo_light, FontWeight.Light),
-    Font(R.font.spoqa_han_sans_neo_medium, FontWeight.Medium),
-    Font(R.font.spoqa_han_sans_neo_regular, FontWeight.Normal),
-    Font(R.font.spoqa_han_sans_neo_thin, FontWeight.Thin)
+val pretendard = FontFamily(
+    Font(R.font.pretendard_bold, FontWeight.Bold),
+    Font(R.font.pretendard_light, FontWeight.Light),
+    Font(R.font.pretendard_medium, FontWeight.Medium),
+    Font(R.font.pretendard_regular, FontWeight.Normal),
+    Font(R.font.pretendard_thin, FontWeight.Thin)
 )
 
 object OmzTypography {
 
     val body1 = TextStyle(
-        fontFamily = spoqa_han_sans_neo,
+        fontFamily = pretendard,
         fontWeight = FontWeight.Bold,
         fontSize = 18.sp,
     )
 
     val body2 = TextStyle(
-        fontFamily = spoqa_han_sans_neo,
+        fontFamily = pretendard,
         fontWeight = FontWeight.Medium,
         fontSize = 16.sp,
     )
 
     val body3 = TextStyle(
-        fontFamily = spoqa_han_sans_neo,
+        fontFamily = pretendard,
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
     )
 
     val body4 = TextStyle(
-        fontFamily = spoqa_han_sans_neo,
+        fontFamily = pretendard,
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp,
     )
