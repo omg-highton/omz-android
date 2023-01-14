@@ -10,6 +10,7 @@ import com.minjae.highthon.features.home.screen.HomeDetailScreen
 import com.minjae.highthon.features.home.screen.HomeScreen
 import com.minjae.highthon.features.myinfo.screen.MyInfoScreen
 import com.minjae.highthon.features.result.screen.ResultScreen
+import com.minjae.highthon.features.write.screen.WriteScreen
 import com.minjae.highthon.utils.BottomNavItem
 
 @Composable
@@ -30,6 +31,10 @@ fun NavigationGraph(navController: NavHostController) {
         
         composable(NavGroup.Home.HOME_DETAIL) {
             HomeDetailScreen(navController = navController)
+        }
+
+        composable(NavGroup.Home.WRITE) {
+            WriteScreen(navController = navController)
         }
     }
 }

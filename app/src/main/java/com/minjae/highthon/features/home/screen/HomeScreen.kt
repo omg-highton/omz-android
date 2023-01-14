@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -63,86 +64,104 @@ fun HomeScreen(
 //    homeVM: HomeVM,
     navController: NavController
 ) {
-    Column(
+    Box(
         modifier = Modifier
-            .fillMaxSize()
-            .background(OmzColor.BackgroundColor)
-            .verticalScroll(rememberScrollState())
+            .fillMaxSize(),
+        contentAlignment = Alignment.BottomEnd,
     ) {
-        TopLogo()
-
-        Banner(image = painterResource(id = R.drawable.dummy_img))
-
-        Image(
+        Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = 16.dp),
-            painter = painterResource(id = R.drawable.fake_home),
-            contentDescription = null,
-            contentScale = ContentScale.FillWidth,
-        )
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(4.dp)
-                .background(OmzColor.DIVIDER)
-        )
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(44.dp)
-                .padding(
-                    horizontal = 20.dp,
-                    vertical = 12.dp,
-                ),
+                .background(OmzColor.BackgroundColor)
+                .verticalScroll(rememberScrollState())
         ) {
-            Headline1(text = "최신 게시글")
-        }
+            TopLogo()
 
-        Divider()
+            Banner(image = painterResource(id = R.drawable.main_banner))
 
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(44.dp)
-                .padding(
-                    horizontal = 20.dp,
-                    vertical = 12.dp,
-                ),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
             Image(
-                painter = painterResource(id = R.drawable.ic_btn_all),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 16.dp),
+                painter = painterResource(id = R.drawable.fake_home),
                 contentDescription = null,
-                modifier = Modifier.size(60.dp, 30.dp),
                 contentScale = ContentScale.FillWidth,
             )
 
-            Spacer(modifier = Modifier.width(16.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
-            Headline2(text = "Z세대", color = OmzColor.Gray80)
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(4.dp)
+                    .background(OmzColor.DIVIDER)
+            )
 
-            Spacer(modifier = Modifier.width(16.dp))
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(44.dp)
+                    .padding(
+                        horizontal = 20.dp,
+                        vertical = 12.dp,
+                    ),
+            ) {
+                Headline1(text = "최신 게시글")
+            }
 
-            Headline2(text = "M세대", color = OmzColor.Gray80)
+            Divider()
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(44.dp)
+                    .padding(
+                        horizontal = 20.dp,
+                        vertical = 12.dp,
+                    ),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_btn_all),
+                    contentDescription = null,
+                    modifier = Modifier.size(60.dp, 30.dp),
+                    contentScale = ContentScale.FillWidth,
+                )
+
+                Spacer(modifier = Modifier.width(16.dp))
+
+                Headline2(text = "Z세대", color = OmzColor.Gray80)
+
+                Spacer(modifier = Modifier.width(16.dp))
+
+                Headline2(text = "M세대", color = OmzColor.Gray80)
+            }
+
+            Divider()
+
+            Image(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp)
+                    .clickable {
+                        navController.navigate(NavGroup.Home.HOME_DETAIL)
+                    },
+                painter = painterResource(id = R.drawable.ic_detail_a),
+                contentDescription = null,
+                contentScale = ContentScale.FillWidth,
+            )
         }
 
-        Divider()
-
         Image(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp)
-                .clickable {
-                    navController.navigate(NavGroup.Home.HOME_DETAIL)
-                },
-            painter = painterResource(id = R.drawable.ic_detail_a),
+            painter = painterResource(id = R.drawable.ic_button2),
             contentDescription = null,
             contentScale = ContentScale.FillWidth,
+            modifier = Modifier
+                .size(48.dp)
+                .offset(x = -32.dp, y = -32.dp)
+                .clickable {
+                    navController.navigate(NavGroup.Home.WRITE)
+                }
         )
     }
 }
