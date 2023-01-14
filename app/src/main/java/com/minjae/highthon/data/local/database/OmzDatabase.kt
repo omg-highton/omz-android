@@ -10,7 +10,8 @@ import com.minjae.highthon.data.local.entity.OmzEntity
     entities = [
         OmzEntity::class
     ],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 
 @TypeConverters
