@@ -4,7 +4,7 @@ import androidx.compose.ui.graphics.Color
 
 object OmzColor {
 
-    val BackgroundColor = Color(0xFFFBFBFB)
+    val BackgroundColor = Color(0xFFFFFFFF)
 
     val White = Color(0xFFFFFFFF)
     val Gray100 = Color(0xFFEEEEEE)
@@ -13,9 +13,11 @@ object OmzColor {
     val Black = Color(0xFF000000)
 
     val SubColor = Color(0xFFD2A2F9)
-    val MainColor = Color(0xFFA646F2)
+    val MainColor = Color(0xFFFECE00)
     val PressedColor = Color(0xFF9A29F3)
 
     val Check = Color(0xFF04DF00)
     val Error = Color(0xFFDC3035)
+
+    val DIVIDER = Color(0xFFEDEDED)
 }
