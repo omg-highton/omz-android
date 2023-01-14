@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
 @InstallIn(SingletonComponent::class)
-object RetrofitModule {
+object NetworkModule {
 
     private val BASE_URL = "http://172.20.10.3:3000/v1/" // TODO("base url 입력")
 
@@ -44,5 +44,4 @@ object RetrofitModule {
     fun provideAuthApi(retrofit: Retrofit): AuthAPI =
         retrofit.create(AuthAPI::class.java)
      */
-
 }

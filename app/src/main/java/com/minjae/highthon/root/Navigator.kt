@@ -2,7 +2,6 @@ package com.minjae.highthon.root
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.navigation
 
 fun NavGraphBuilder.boardNavigation(
     navController: NavController
