@@ -65,7 +65,7 @@ fun HomeDetailScreen(
         ) {
             Image(
                 modifier = Modifier.fillMaxWidth(),
-                painter = painterResource(id = R.drawable.fake_home_detail),
+                painter = painterResource(id = R.drawable.bg_home_detail),
                 contentDescription = null,
                 contentScale = ContentScale.FillWidth
             )
